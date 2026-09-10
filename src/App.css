@@ -1,0 +1,138 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.content {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  transform: translateY(8vh);
+  z-index: 10;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content h1 {
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+}
+
+.start-button {
+  padding: 1.2rem 2.5rem;
+  font-size: clamp(1rem, 2vw, 3rem);
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #aa3bff, #c084fc);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(170, 59, 255, 0.5), 
+              0 0 40px rgba(192, 132, 252, 0.3);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.start-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(170, 59, 255, 0.8), 
+              0 0 60px rgba(192, 132, 252, 0.5);
+  border-color: rgba(251, 255, 23, 0.934);
+}
+
+.start-button:active {
+  transform: scale(0.95);
+}
+
+.content p {
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
+  color: #ccc;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.start-hint {
+  margin: 0;
+  visibility: hidden;
+  color: #f4e85c !important;
+  font-family: "Courier New", monospace;
+  font-size: clamp(0.8rem, 1.6vw, 1.1rem) !important;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 8px rgba(244, 232, 92, 0.75);
+  animation: start-hint-blink 1.4s steps(2, end) infinite;
+}
+
+@keyframes start-hint-blink {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .content {
+    padding: 1rem;
+    transform: translateY(5vh);
+    gap: 1.5rem;
+  }
+
+  .start-button {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 0.5rem;
+    transform: translateY(3vh);
+    gap: 1rem;
+  }
+
+  .start-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Portfolio Page */
+.portfolio-page {
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  position: relative;
+}
+
+
+
+

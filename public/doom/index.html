@@ -1,0 +1,95 @@
+<!doctype html>
+
+<!-- copied from https://raw.githubusercontent.com/mdn/webassembly-examples/master/understanding-text-format/logger2.html (CC0) -->
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>DooM</title>
+
+    <style>
+      :root { color-scheme: dark; }
+      body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        place-items: center;
+        background: #090b12;
+        color: #fff;
+        font-family: system-ui, sans-serif;
+      }
+      main { width: min(100% - 2rem, 1080px); text-align: center; }
+      h1 { margin: 0 0 1rem; letter-spacing: 0.12em; }
+      #focushint { min-height: 1.5em; color: #d71920; }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+      #screen {
+        width: min(100%, 1000px);
+        height: auto;
+        image-rendering: pixelated;
+        outline: 3px solid #d71920;
+        outline-offset: 4px;
+      }
+      .controls {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      .controls button {
+        padding: 0.65rem 0.95rem;
+        color: #fff;
+        background: #080808;
+        border: 1px solid #d71920;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .controls button:hover { background: #d71920; }
+      #output, .stats { display: none; }
+
+      @media (max-width: 760px) {
+        .controls {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>DOOM</h1>
+      <p id="focushint"></p>
+      <div class="container">
+        <canvas id="screen" width="640" height="400" tabindex="0">Tela do jogo</canvas>
+        <div class="controls" aria-label="Controles do jogo">
+          <button id="enterButton" aria-label="Iniciar" title="Iniciar o jogo">&#x23CE;</button>
+          <button id="leftButton" aria-label="Mover para a esquerda" title="Mover para a esquerda">&#x2190;</button>
+          <button id="upButton" aria-label="Mover para cima" title="Mover para cima">&#x2191;</button>
+          <button id="downButton" aria-label="Mover para baixo" title="Mover para baixo">&#x2193;</button>
+          <button id="rightButton" aria-label="Mover para a direita" title="Mover para a direita">&#x2192;</button>
+          <button id="ctrlButton" aria-label="Atirar" title="Atirar">Ctrl</button>
+          <button id="spaceButton" aria-label="Abrir portas" title="Abrir portas">Espaco</button>
+          <button id="altButton" aria-label="Abaixar e movimentar" title="Usar Alt para movimentar lateralmente">Alt</button>
+        </div>
+        <div id="output"></div>
+      </div>
+      <div class="stats">
+        <span id="getmsps_stats">0</span><span id="getms_stats">0</span>
+        <span id="fps_stats">0</span><span id="drawframes_stats">0</span>
+        <span id="animationfps_stats">0</span>
+      </div>
+    </main>
+
+    <script src="main.js" defer></script>
+  </body>
+
+</html>
