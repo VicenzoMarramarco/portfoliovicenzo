@@ -8,9 +8,8 @@
   position: relative;
   overflow: hidden;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 .portfolio-menu {
@@ -30,6 +29,18 @@
   justify-content: space-between;
   align-items: flex-end;
   pointer-events: none;
+}
+
+@media (min-width: 1800px) {
+  .portfolio-menu {
+    width: 70vw;
+    max-width: 1400px;
+    gap: 3vw;
+  }
+
+  .portfolio-nav {
+    inset: auto 4vw 3vh;
+  }
 }
 
 .portfolio-home-controls {
